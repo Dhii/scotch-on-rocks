@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/johnpbloch/wordpress" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/johnpbloch/wordpress-core-installer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/oscarotero/env" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/squizlabs/php_codesniffer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vlucas/phpdotenv" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="PHP" type="php">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/composer" />
+          <root url="file://$MODULE_DIR$/vendor/johnpbloch/wordpress" />
+          <root url="file://$MODULE_DIR$/vendor/johnpbloch/wordpress-core-installer" />
+          <root url="file://$MODULE_DIR$/vendor/oscarotero/env" />
+          <root url="file://$MODULE_DIR$/vendor/squizlabs/php_codesniffer" />
+          <root url="file://$MODULE_DIR$/vendor/vlucas/phpdotenv" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/composer" />
+          <root url="file://$MODULE_DIR$/vendor/johnpbloch/wordpress" />
+          <root url="file://$MODULE_DIR$/vendor/johnpbloch/wordpress-core-installer" />
+          <root url="file://$MODULE_DIR$/vendor/oscarotero/env" />
+          <root url="file://$MODULE_DIR$/vendor/squizlabs/php_codesniffer" />
+          <root url="file://$MODULE_DIR$/vendor/vlucas/phpdotenv" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
