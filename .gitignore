@@ -25,3 +25,4 @@ vendor/*
 /test/log/
 /build/
 /.idea/workspace.xml
+/.vagrant/
