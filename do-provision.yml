@@ -1,22 +1,29 @@
 #cloud-config
+
+# Users
 users:
-  - name: <%USERNAME%>
+  - name: deploy
     groups: sudo
     shell: /bin/bash
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     ssh-authorized-keys:
       - <%SSH_PUB_KEY%>
 
+# Web server
 apt_update: true
 packages:
   - nginx
   - php7.0-fpm
   - php-mysql
-  - mysql-server
+  - php-cli
   - php7.0-mcrypt
   - php7.0-gd
   - php7.0-curl
   - php7.0-xml
+  - git
+  - curl
+  - php-mbstring
+  - unzip
 write_files:
   - path: /etc/nginx/sites-available/default
     content: |
