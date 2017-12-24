@@ -69,3 +69,6 @@ runcmd:
   # Ensure backwards compatible with 14.04
   - file=/etc/nginx/fastcgi.conf; if [ ! -f "$file" ]; then ln -s /etc/nginx/fastcgi_params "$file"; fi
   - service nginx restart
+  # Install Composer
+  - cd ~
+  - curl -sS "https://getcomposer.org/installer" | sudo php -- --install-dir="/usr/local/bin" --filename="composer"
