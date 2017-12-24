@@ -77,3 +77,9 @@ runcmd:
   - echo "mariadb-server mysql-server/root_password password $mysqlPassword" | sudo debconf-set-selections
   - echo "mariadb-server mysql-server/root_password_again password $mysqlPassword" | sudo debconf-set-selections
   - sudo apt-get -y install mariadb-server
+  # Configure WordPress
+  - export wordpressDatabase="wordpress"
+  - export wordpressUser="wordpressuser"
+  - export wordpressPassword="wordpresspassword"
+  - sudo mysql -u root -p$mysqlPassword -e "CREATE DATABASE $wordpressDatabase;"
+  - sudo mysql -u root -p$mysqlPassword -e "GRANT ALL PRIVILEGES ON $wordpressDatabase.* TO '$wordpressUser'@'localhost' IDENTIFIED BY '$wordpressPassword'; FLUSH PRIVILEGES;"
