@@ -55,7 +55,7 @@ your application, which by default would be at `/srv/www/html/shared`.
 [Capistrano]: http://capistranorb.com/
 [Git]: https://git-scm.com/
 
-[local\deploy-authorized-key]: do-provision.yml#L9
+[local\deploy-authorized-keys]: do-provision.yml#L9
 [local\capistrano-ssh-key-path]: config/deploy/production.rb#L19
 [local\hostname]: config/deploy/production.rb#L19
 [local\repo-url]: config/deploy.rb#L2
