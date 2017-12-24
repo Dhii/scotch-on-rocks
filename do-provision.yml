@@ -31,7 +31,7 @@ write_files:
         listen 80 default_server;
         listen [::]:80 default_server ipv6only=on;
 
-        root /var/www/html;
+        root /srv/www/html/current;
         index index.php index.html index.htm;
 
         server_name localhost;
@@ -63,8 +63,7 @@ runcmd:
   # Leaving some traces in the log
   - export srVersion="0.0.0"
   - logger "cloudconfig script version is $srVersion"
-  - mkdir -p /var/www/html
-  - cp /usr/share/nginx/html/index.html /var/www/html/
+  - mkdir -p /srv/www/html/current
   - sed -i -e "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/" /etc/php/7.0/fpm/php.ini
   # Ensure backwards compatible with 14.04
   - file=/etc/nginx/fastcgi.conf; if [ ! -f "$file" ]; then ln -s /etc/nginx/fastcgi_params "$file"; fi

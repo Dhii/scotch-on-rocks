@@ -1,4 +1,4 @@
-set :application, 'my_app_name'
+set :application, 'html'
 set :repo_url, 'git@example.com:me/my_repo.git'
 
 # Branch options
