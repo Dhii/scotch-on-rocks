@@ -8,7 +8,7 @@ set :stage, :production
 
 # Extended Server Syntax
 # ======================
-ask(:password, nil)
+#ask(:password, nil)
 server 'example.com', user: 'deploy', roles: %w{web app db}, password: fetch(:password)
 
 # you can set custom ssh options
