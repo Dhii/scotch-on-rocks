@@ -58,11 +58,6 @@ write_files:
             include fastcgi.conf;
         }
       }
-  - path: /var/www/html/info.php
-    content: |
-      <?php
-      phpinfo();
-      ?>
 runcmd:
   - mkdir -p /var/www/html
   - cp /usr/share/nginx/html/index.html /var/www/html/
