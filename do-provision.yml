@@ -31,7 +31,7 @@ write_files:
         listen 80 default_server;
         listen [::]:80 default_server ipv6only=on;
 
-        root /srv/www/html/current;
+        root /srv/www/html/current/web;
         index index.php index.html index.htm;
 
         server_name default_server;
