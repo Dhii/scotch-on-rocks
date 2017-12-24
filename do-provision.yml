@@ -34,7 +34,7 @@ write_files:
         root /srv/www/html/current;
         index index.php index.html index.htm;
 
-        server_name localhost;
+        server_name default_server;
 
         location / {
             # First attempt to serve request as file, then
