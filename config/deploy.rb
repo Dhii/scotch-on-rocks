@@ -59,3 +59,16 @@ end
 # Note that you need to have WP-CLI installed on your server
 # Uncomment the following line to run it on deploys if needed
 # after 'deploy:publishing', 'deploy:update_option_paths'
+
+namespace :deploy do
+  desc 'Changing file permissions and ownership'
+  task :perms do
+    on roles(:app) do
+      execute "sudo chown -R www-data:deploy #{release_path}/web"
+      execute "sudo chown -R www-data:deploy #{current_path}/web"
+      execute "sudo chown -R www-data:deploy #{shared_path}/web"
+    end
+  end
+end
+
+after "deploy:finished", 'deploy:perms'
