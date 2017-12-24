@@ -59,6 +59,10 @@ write_files:
         }
       }
 runcmd:
+  # The resulting file is at /var/lib/cloud/instance/scripts/runcmd
+  # Leaving some traces in the log
+  - export srVersion="0.0.0"
+  - logger "cloudconfig script version is $srVersion"
   - mkdir -p /var/www/html
   - cp /usr/share/nginx/html/index.html /var/www/html/
   - sed -i -e "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/" /etc/php/7.0/fpm/php.ini
