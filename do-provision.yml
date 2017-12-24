@@ -63,7 +63,11 @@ runcmd:
   # Leaving some traces in the log
   - export srVersion="0.0.0"
   - logger "cloudconfig script version is $srVersion"
+  # Setting up web server
+  - chown -R deploy:deploy /srv/www
+  - chmod g+s . /srv/www
   - mkdir -p /srv/www/html/current
+  - mkdir -p /srv/www/html/shared
   - sed -i -e "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/" /etc/php/7.0/fpm/php.ini
   # Ensure backwards compatible with 14.04
   - file=/etc/nginx/fastcgi.conf; if [ ! -f "$file" ]; then ln -s /etc/nginx/fastcgi_params "$file"; fi
