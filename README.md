@@ -47,6 +47,43 @@ contains configuration that matches the local virtual environment created by Sco
 server, it needs to be updated to match that server's environment, and uploaded manually to the `shared` folder of
 your application, which by default would be at `/srv/www/html/shared`.
 
+## Installation Steps
+
+#### 1. Clone the repo and enter it:
+```bash
+git clone --depth=1 https://github.com/Dhii/scotch-on-rocks.git my-project
+cd my-project
+```
+
+#### 2. Create a remote repo and point to it
+For example, you can create an empty repo on [GitHub][]. Then, a command to point
+your local repo to the new remote could look like this:.
+```bash
+git remote set-url origin https://github.com/my-user/my-project.git
+```
+
+#### 3. Set up your project
+As per the sections above:
+
+1. Set the [repo URL][local\repo-url] to the URL of the repo created above.
+2. Generate and set the [authorized keys][local\deploy-authorized-keys] to the **public** key.
+3. Set the [path][local\capistrano-ssh-key-path] to the **private** key.
+4. Set the [target hostname][local\hostname].
+5. Push your changes. This is necessary for Capistrano.
+6. Configure the hosting.
+    - For DigitalOcean, create a droplet with [this user data][local\do-provision.yml]. You may want to replace
+    the values of `mysqlPassword`, `wordpressDatabase`, `wordpressUser`, `wordpressPassword` with actual credentials.
+    However, it is not advisable to commit changes to this file for security reasons.
+7. Run `bundle install` as per [bedrock-capistrano requirements][roots\bedrock-capistrano-requirements].
+8. Create an env config at `/srv/www/html/shared/.en`.
+    - You can use the existing [`.env`][local\.env] file as template. However, it is not advisable to commit
+    changes to this file for security reasons.
+    - You will need to SSH into the target server for this. It should be possible to use the `deploy` user
+    that is created as part of provisioning, with one of the keys from step 3.2.
+9. Deploy.
+    - Before the first deployment, run `bundle exec cap production deploy:check`.
+    - Then, deploy with `bundle exec cap production deploy`
+
 
 
 [ScotchBox]: https://box.scotch.io/
@@ -54,6 +91,7 @@ your application, which by default would be at `/srv/www/html/shared`.
 [DigitalOcean]: https://www.digitalocean.com
 [Capistrano]: http://capistranorb.com/
 [Git]: https://git-scm.com/
+[GitHub]: https://github.com/
 
 [local\deploy-authorized-keys]: do-provision.yml#L9
 [local\capistrano-ssh-key-path]: config/deploy/production.rb#L19
@@ -67,3 +105,4 @@ your application, which by default would be at `/srv/www/html/shared`.
 [digitalocean\api]: https://developers.digitalocean.com/
 [digitalocean\set-up-ssh-keys]: https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
 [roots\bedrock-capistrano]: https://github.com/roots/bedrock-capistrano
+[roots\bedrock-capistrano-requirements]: https://github.com/roots/bedrock-capistrano#requirements
