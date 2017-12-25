@@ -89,7 +89,7 @@ As per the sections above:
     - Watch out when using [special shell characters][shell\special-chars]: these values will be parts of
     shell commands, and therefore must be [escaped][shell\escaping-chars].
 7. Run `bundle install` as per [bedrock-capistrano requirements][roots\bedrock-capistrano-requirements].
-8. Create an env config at `/srv/www/html/shared/.en`.
+8. Create an env config at `/srv/www/html/shared/.env`.
     - You can use the existing [`.env`][local\.env] file as template. However, it is not advisable to commit
     changes to this file for security reasons.
     - You will need to SSH into the target server for this. It should be possible to use the `deploy` user
