@@ -106,7 +106,6 @@ The current local version is PHP 7.0.
 5. Commit the changes of [`composer.lock`][local\composer.lock] file to record the new packages.
 
 ### 4. Set up deployment
-As per the sections above:
 
 1. Set the [repo URL][local\repo-url] to the URL of the repo created above.
 2. Generate and set the [authorized keys][local\deploy-authorized-keys] to the **public** key.
