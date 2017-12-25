@@ -91,7 +91,7 @@ You will probably want to update the following:
 
 Maybe also:
 - [Project tags][local\composer-keywords].
-- [Package license][composer-package-license].
+- [Package license][local\composer-package-license].
 - Set [minimum stability][composer\config-minimum-stability] to `dev`.
 
 
