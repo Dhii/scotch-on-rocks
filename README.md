@@ -94,8 +94,18 @@ Maybe also:
 - [Package license][local\composer-package-license].
 - Set [minimum stability][composer\config-minimum-stability] to `dev`.
 
+### 3. Set up local environment
+The dependencies should not be installed yet at this point, and if they are - chances are that they
+do not match the target environment. Both the local and the remote versions of PHP should match.
+The current local version is PHP 7.0.
 
-### 3. Set up deployment
+1. Run [`vagrant up`][vagrant\command-up] to create the virtual environment.
+2. Run [`vagrant ssh`][vagrant\command-ssh] to log into the new environment.
+3. Run `cd /var/www` to enter the project's directory inside the environment.
+4. Run [`composer update`][composer\command-update] to install the appropriate dependencies.
+5. Commit the changes of [`composer.lock`][local\composer.lock] file to record the new packages.
+
+### 4. Set up deployment
 As per the sections above:
 
 1. Set the [repo URL][local\repo-url] to the URL of the repo created above.
@@ -116,7 +126,7 @@ As per the sections above:
     - You will need to SSH into the target server for this. It should be possible to use the `deploy` user
     that is created as part of provisioning, with one of the keys from step 3.2.
 
-### 4. Deploy
+### 5. Deploy
 1. Before the first deployment, run `bundle exec cap production deploy:check`.
 2. Then, deploy with `bundle exec cap production deploy`
 
@@ -142,6 +152,7 @@ As per the sections above:
 [local\composer-package-description]: composer.json#L5
 [local\composer-author-info]: composer.json#L7
 [local\composer-keywords]: composer.json#L13
+[local\composer.lock]: composer.lock
 [digitalocean\userdata]: https://www.digitalocean.com/community/tutorials/an-introduction-to-droplet-metadata
 [digitalocean\api]: https://developers.digitalocean.com/
 [digitalocean\set-up-ssh-keys]: https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
@@ -150,3 +161,6 @@ As per the sections above:
 [shell\special-chars]: http://tldp.org/LDP/abs/html/special-chars.html
 [shell\escaping-chars]: http://tldp.org/LDP/abs/html/escapingsection.html#ESCP
 [composer\config-minimum-stability]: https://getcomposer.org/doc/04-schema.md#minimum-stability
+[composer\command-update]: https://getcomposer.org/doc/03-cli.md#update
+[vagrant\command-up]: https://www.vagrantup.com/docs/cli/up.html
+[vagrant\command-ssh]: https://www.vagrantup.com/docs/cli/ssh.html
