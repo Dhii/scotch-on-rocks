@@ -71,7 +71,7 @@ git commit
 For example, you can create an empty repo on [GitHub][]. Then, a command to point
 your local repo to the new remote could look like this:.
 ```bash
-git remote set-url origin https://github.com/my-user/my-project.git
+git remote add origin https://github.com/my-user/my-project.git
 ```
 
 #### 4. Set up your project
