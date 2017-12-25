@@ -25,6 +25,15 @@ The technologies and tools used here include:
 - [PHP 7][] for fast running and modern development.
 - [MariaDB][] for fast and modern data storage and retrieval.
 
+## Requirements
+Your host environment - the one you will be developing on and deploying from -is required to have these tools installed:
+
+- [Git][].
+- [Vagrant][].
+- An [SSH][] client.
+
+For Windows hosts, it is recommended to use [Git BASH][] , as it allows running Vagrant, comes with an SSH client, and
+is installed together with Git.
 
 ## Installation Steps
 
@@ -164,12 +173,14 @@ your application, which by default would be at `/srv/www/html/shared`.
 [DigitalOcean]: https://www.digitalocean.com
 [Capistrano]: http://capistranorb.com/
 [Git]: https://git-scm.com/
+[Git BASH]: http://gitforwindows.org/
 [GitHub]: https://github.com/
 [Composer]: https://getcomposer.org/
 [PHP 7]: http://php.net/manual/en/migration70.new-features.php
 [WordPress]: https://wordpress.org/
 [MariaDB]: https://mariadb.org/about/
 [Vagrant]: https://www.vagrantup.com/
+[SSH]: https://en.wikipedia.org/wiki/Secure_Shell
 
 [local\deploy-authorized-keys]: do-provision.yml#L9
 [local\capistrano-ssh-key-path]: config/deploy/production.rb#L19
