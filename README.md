@@ -79,7 +79,7 @@ do not match the target environment. Both the local and the remote versions of P
 The current local version is PHP 7.0.
 
 1. Run [`vagrant up`][vagrant\command-up] to create the virtual environment.
-2. The [`composer update`][composer\command-update] was run as part of the provisioning process.
+2. The [`composer update`][composer\command-update] command was run as part of the provisioning process.
 Commit the changes in the [`composer.lock`][local\composer.lock] file to record the new packages.
 
 ### 4. Set up deployment
