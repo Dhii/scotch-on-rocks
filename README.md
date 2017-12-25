@@ -51,36 +51,36 @@ your application, which by default would be at `/srv/www/html/shared`.
 
 ### 1. Initialize the project
 
-1. Clone the project
+#### 1. **Clone the project**
 
-    ```bash
-    git clone --depth=1 https://github.com/Dhii/scotch-on-rocks.git my-project
-    cd my-project
-    ```
+```bash
+git clone --depth=1 https://github.com/Dhii/scotch-on-rocks.git my-project
+cd my-project
+```
 
-2. Erase previous history
+#### 2. Erase previous history
+Just delete the `.git` folder, then initialize the repository:
 
-    Just delete the `.git` folder, then initialize the repository:
-    ```bash
-    rm -rf .git
-    git init
-    ```
+```bash
+rm -rf .git
+git init
+```
 
-3. Commit everything
+#### 3. Commit everything
 
-    ```
-    git add .
-    git commit
-    ```
+```
+git add .
+git commit
+```
 
-4. Create a remote repo and point to it
+#### 4. Create a remote repo and point to it
 
-    For example, you can create an empty repo on [GitHub][]. Then, a command to point
-    your local repo to the new remote could look like this:
+For example, you can create an empty repo on [GitHub][]. Then, a command to point
+your local repo to the new remote could look like this:
 
-    ```bash
-    git remote add origin https://github.com/my-user/my-project.git
-    ```
+```bash
+git remote add origin https://github.com/my-user/my-project.git
+```
 
 ### 2. Configure the package
 You will probably want to update the following:
