@@ -95,7 +95,7 @@ Maybe also:
 - Set [minimum stability][composer\config-minimum-stability] to `dev`.
 
 
-### 3. Set up your project
+### 3. Set up deployment
 As per the sections above:
 
 1. Set the [repo URL][local\repo-url] to the URL of the repo created above.
