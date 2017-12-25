@@ -12,7 +12,8 @@ sudo apt-get update
 # Install extra packages
 sudo apt-get install -y \
     php-curl \
-    php7.0-xml
+    php7.0-xml \
+    php7.0-xmlrpc
 
 # This replaces the default Apache docroot of ScotchBox with Bedrock's webroot
 sed -i 's/\([[:blank:]]*DocumentRoot\)[[:blank:]]*.*$/\1 \/var\/www\/web/g' /etc/apache2/sites-available/000-default.conf
