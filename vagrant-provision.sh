@@ -15,6 +15,9 @@ sudo apt-get install -y \
     php7.0-xml \
     php7.0-xmlrpc
 
+# https://github.com/scotch-io/scotch-box/issues/311#issuecomment-353892680
+sudo apt-get upgrade -y
+
 # This replaces the default Apache docroot of ScotchBox with Bedrock's webroot
 sed -i 's/\([[:blank:]]*DocumentRoot\)[[:blank:]]*.*$/\1 \/var\/www\/web/g' /etc/apache2/sites-available/000-default.conf
 sed -i 's/\([[:blank:]]*DocumentRoot\)[[:blank:]]*.*$/\1 \/var\/www\/web/g' /etc/apache2/sites-available/scotchbox.local.conf
