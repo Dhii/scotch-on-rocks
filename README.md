@@ -86,6 +86,8 @@ As per the sections above:
     - For DigitalOcean, create a droplet with [this user data][local\do-provision.yml]. You may want to replace
     the values of `mysqlPassword`, `wordpressDatabase`, `wordpressUser`, `wordpressPassword` with actual credentials.
     However, it is not advisable to commit changes to this file for security reasons.
+    - Watch out when using [special shell characters][shell\special-chars]: these values will be parts of
+    shell commands, and therefore must be [escaped][shell\escaping-chars].
 7. Run `bundle install` as per [bedrock-capistrano requirements][roots\bedrock-capistrano-requirements].
 8. Create an env config at `/srv/www/html/shared/.en`.
     - You can use the existing [`.env`][local\.env] file as template. However, it is not advisable to commit
@@ -119,3 +121,5 @@ As per the sections above:
 [digitalocean\set-up-ssh-keys]: https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
 [roots\bedrock-capistrano]: https://github.com/roots/bedrock-capistrano
 [roots\bedrock-capistrano-requirements]: https://github.com/roots/bedrock-capistrano#requirements
+[shell\special-chars]: http://tldp.org/LDP/abs/html/special-chars.html
+[shell\escaping-chars]: http://tldp.org/LDP/abs/html/escapingsection.html#ESCP
