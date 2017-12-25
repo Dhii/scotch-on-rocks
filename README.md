@@ -79,10 +79,8 @@ do not match the target environment. Both the local and the remote versions of P
 The current local version is PHP 7.0.
 
 1. Run [`vagrant up`][vagrant\command-up] to create the virtual environment.
-2. Run [`vagrant ssh`][vagrant\command-ssh] to log into the new environment.
-3. Run `cd /var/www` to enter the project's directory inside the environment.
-4. Run [`composer update`][composer\command-update] to install the appropriate dependencies.
-5. Commit the changes of [`composer.lock`][local\composer.lock] file to record the new packages.
+2. The [`composer update`][composer\command-update] was run as part of the provisioning process.
+Commit the changes in the [`composer.lock`][local\composer.lock] file to record the new packages.
 
 ### 4. Set up deployment
 
