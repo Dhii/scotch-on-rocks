@@ -82,7 +82,20 @@ your application, which by default would be at `/srv/www/html/shared`.
     git remote add origin https://github.com/my-user/my-project.git
     ```
 
-#### 2. Set up your project
+#### 2. Configure the package
+You will probably want to update the following:
+
+- [Project name][local\composer-package-name].
+- [Project description][local\composer-package-description].
+- [Author info][local\composer-author-info].
+
+Maybe also:
+- [Project tags][local\composer-keywords].
+- [Package license][composer-package-license].
+- Set [minimum stability][composer\config-minimum-stability] to `dev`.
+
+
+#### 3. Set up your project
 As per the sections above:
 
 1. Set the [repo URL][local\repo-url] to the URL of the repo created above.
@@ -101,9 +114,9 @@ As per the sections above:
     - You can use the existing [`.env`][local\.env] file as template. However, it is not advisable to commit
     changes to this file for security reasons.
     - You will need to SSH into the target server for this. It should be possible to use the `deploy` user
-    that is created as part of provisioning, with one of the keys from step 4.2.
+    that is created as part of provisioning, with one of the keys from step 3.2.
 
-#### 3. Deploy
+#### 4. Deploy
 1. Before the first deployment, run `bundle exec cap production deploy:check`.
 2. Then, deploy with `bundle exec cap production deploy`
 
@@ -124,6 +137,11 @@ As per the sections above:
 [local\config/deploy.rb]: config/deploy.rb
 [local\.env]: .env
 [local\Vagrantfile]: Vagrantfile
+[local\composer-package-name]: composer.json#L2
+[local\composer-package-license]: composer.json#L5
+[local\composer-package-description]: composer.json#L5
+[local\composer-author-info]: composer.json#L7
+[local\composer-keywords]: composer.json#L13
 [digitalocean\userdata]: https://www.digitalocean.com/community/tutorials/an-introduction-to-droplet-metadata
 [digitalocean\api]: https://developers.digitalocean.com/
 [digitalocean\set-up-ssh-keys]: https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
@@ -131,3 +149,4 @@ As per the sections above:
 [roots\bedrock-capistrano-requirements]: https://github.com/roots/bedrock-capistrano#requirements
 [shell\special-chars]: http://tldp.org/LDP/abs/html/special-chars.html
 [shell\escaping-chars]: http://tldp.org/LDP/abs/html/escapingsection.html#ESCP
+[composer\config-minimum-stability]: https://getcomposer.org/doc/04-schema.md#minimum-stability
