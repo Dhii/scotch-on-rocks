@@ -170,6 +170,8 @@ your application, which by default would be at `/srv/www/html/shared`.
 [Composer]: https://getcomposer.org/
 [PHP 7]: http://php.net/manual/en/migration70.new-features.php
 [WordPress]: https://wordpress.org/
+[MariaDB]: https://mariadb.org/about/
+[Vagrant]: https://www.vagrantup.com/
 
 [local\deploy-authorized-keys]: do-provision.yml#L9
 [local\capistrano-ssh-key-path]: config/deploy/production.rb#L19
