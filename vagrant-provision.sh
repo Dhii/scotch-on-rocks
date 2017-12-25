@@ -9,6 +9,11 @@ sudo rm /etc/apt/sources.list.d/ondrej-php5-5_6-trusty.list
 # Update sources
 sudo apt-get update
 
+# Install extra packages
+sudo apt-get install -y \
+    php-curl \
+    php7.0-xml
+
 # This replaces the default Apache docroot of ScotchBox with Bedrock's webroot
 sed -i 's/\([[:blank:]]*DocumentRoot\)[[:blank:]]*.*$/\1 \/var\/www\/web/g' /etc/apache2/sites-available/000-default.conf
 sed -i 's/\([[:blank:]]*DocumentRoot\)[[:blank:]]*.*$/\1 \/var\/www\/web/g' /etc/apache2/sites-available/scotchbox.local.conf
