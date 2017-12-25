@@ -86,5 +86,5 @@ runcmd:
   - export wordpressDatabase="wordpress"
   - export wordpressUser="wordpressuser"
   - export wordpressPassword="wordpresspassword"
-  - sudo mysql -u root -p$mysqlPassword -e "CREATE DATABASE $wordpressDatabase;"
-  - sudo mysql -u root -p$mysqlPassword -e "GRANT ALL PRIVILEGES ON $wordpressDatabase.* TO '$wordpressUser'@'localhost' IDENTIFIED BY '$wordpressPassword'; FLUSH PRIVILEGES;"
+  - sudo mysql -u root --password='$mysqlPassword' -e "CREATE DATABASE \`$wordpressDatabase\`;"
+  - sudo mysql -u root --password='$mysqlPasword' -e "GRANT ALL PRIVILEGES ON \`$wordpressDatabase\`.* TO '$wordpressUser'@'localhost' IDENTIFIED BY '$wordpressPassword'; FLUSH PRIVILEGES;"
