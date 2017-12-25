@@ -27,3 +27,6 @@ service apache2 restart
 
 # Install gems
 (cd /var/www && ~vagrant/.rbenv/shims/bundle install)
+
+# Update PHP dependencies
+(cd /var/www && composer update)
