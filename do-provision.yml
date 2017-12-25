@@ -63,6 +63,7 @@ runcmd:
   # Leaving some traces in the log
   - export srVersion="0.0.0"
   - logger "cloudconfig script version is $srVersion"
+  - logger "Part of Scotch on Rocks https://github.com/Dhii/scotch-on-rocks"
   # Setting up web server
   - mkdir -p /srv/www/html/current
   - mkdir -p /srv/www/html/shared
