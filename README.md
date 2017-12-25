@@ -138,7 +138,7 @@ As per the sections above:
 [local\.env]: .env
 [local\Vagrantfile]: Vagrantfile
 [local\composer-package-name]: composer.json#L2
-[local\composer-package-license]: composer.json#L5
+[local\composer-package-license]: composer.json#L4
 [local\composer-package-description]: composer.json#L5
 [local\composer-author-info]: composer.json#L7
 [local\composer-keywords]: composer.json#L13
