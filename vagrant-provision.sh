@@ -24,3 +24,6 @@ service apache2 restart
 # Bundler
 # https://github.com/scotch-io/scotch-box/issues/209#issuecomment-237508116
 ~vagrant/.rbenv/shims/gem install bundler
+
+# Install gems
+(cd /var/www && ~vagrant/.rbenv/shims/bundle install)
