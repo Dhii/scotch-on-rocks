@@ -55,14 +55,26 @@ git clone --depth=1 https://github.com/Dhii/scotch-on-rocks.git my-project
 cd my-project
 ```
 
-#### 2. Create a remote repo and point to it
+#### 2. Erase previous history
+Just delete the `.git` folder, then run this:
+```bash
+git init
+```
+
+The above will initialize another repository. Now commit everything:
+```
+git add .
+git commit
+```
+
+#### 3. Create a remote repo and point to it
 For example, you can create an empty repo on [GitHub][]. Then, a command to point
 your local repo to the new remote could look like this:.
 ```bash
 git remote set-url origin https://github.com/my-user/my-project.git
 ```
 
-#### 3. Set up your project
+#### 4. Set up your project
 As per the sections above:
 
 1. Set the [repo URL][local\repo-url] to the URL of the repo created above.
@@ -79,10 +91,11 @@ As per the sections above:
     - You can use the existing [`.env`][local\.env] file as template. However, it is not advisable to commit
     changes to this file for security reasons.
     - You will need to SSH into the target server for this. It should be possible to use the `deploy` user
-    that is created as part of provisioning, with one of the keys from step 3.2.
-9. Deploy.
-    - Before the first deployment, run `bundle exec cap production deploy:check`.
-    - Then, deploy with `bundle exec cap production deploy`
+    that is created as part of provisioning, with one of the keys from step 4.2.
+
+#### 5. Deploy
+1. Before the first deployment, run `bundle exec cap production deploy:check`.
+2. Then, deploy with `bundle exec cap production deploy`
 
 
 
