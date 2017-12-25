@@ -49,7 +49,7 @@ your application, which by default would be at `/srv/www/html/shared`.
 
 ## Installation Steps
 
-#### 1. Initialize the project
+### 1. Initialize the project
 
 1. Clone the project
 
@@ -82,7 +82,7 @@ your application, which by default would be at `/srv/www/html/shared`.
     git remote add origin https://github.com/my-user/my-project.git
     ```
 
-#### 2. Configure the package
+### 2. Configure the package
 You will probably want to update the following:
 
 - [Project name][local\composer-package-name].
@@ -95,7 +95,7 @@ Maybe also:
 - Set [minimum stability][composer\config-minimum-stability] to `dev`.
 
 
-#### 3. Set up your project
+### 3. Set up your project
 As per the sections above:
 
 1. Set the [repo URL][local\repo-url] to the URL of the repo created above.
@@ -116,7 +116,7 @@ As per the sections above:
     - You will need to SSH into the target server for this. It should be possible to use the `deploy` user
     that is created as part of provisioning, with one of the keys from step 3.2.
 
-#### 4. Deploy
+### 4. Deploy
 1. Before the first deployment, run `bundle exec cap production deploy:check`.
 2. Then, deploy with `bundle exec cap production deploy`
 
