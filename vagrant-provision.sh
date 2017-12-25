@@ -20,3 +20,7 @@ sed -i 's/\([[:blank:]]*DocumentRoot\)[[:blank:]]*.*$/\1 \/var\/www\/web/g' /etc
 
 # When web-server changes are finished - restart it
 service apache2 restart
+
+# Bundler
+# https://github.com/scotch-io/scotch-box/issues/209#issuecomment-237508116
+~vagrant/.rbenv/shims/gem install bundler
