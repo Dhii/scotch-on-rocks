@@ -1,3 +1,30 @@
+## What is this and why should I use it?
+There are many tools out there that make our lives as developers easier. However, it is a pain to make them
+work together. This project aims to provide a starter setup to allow faster creation of WordPress environments,
+like many other projects do. But it also aims to make those environments version controlled, easily deployable,
+and simple to develop locally. Indeed, in the author's opinion, these 3 things are essential to the development
+of any web application.
+
+And so, the author has picked the most contemporary and proven technologies used for web development,
+and specifically for WordPress development, in order to fulfill the 3 essential requirements. This is why
+this starter pack allows one-click creation of a local development environment, one-click deployments, easy
+cloud VPS provisioning, and a version-controlled codebase with declarative dependency management. Everything
+in this starter aims to fulfill the requirements for running and developing WordPress websites. However,
+this configuration may be forked in the future to adapt to another platform.
+
+The technologies and tools used here include:
+
+- [WordPress][] because... that's what I work with.
+- [Bedrock][] for version-controlled WordPress.
+- [Git][] for version control.
+- [Composer][] for declarative dependency management.
+- [Scotchbox][] for local development.
+- [Vagrant][] for configuration-based virtualization.
+- [Capistrano][] for one-click deployment
+- [cloud-init][] for portable, re-usable cloud VPS configuration.
+- [PHP 7][] for fast running and modern development.
+- [MariaDB][] for fast and modern data storage and retrieval.
+
 ## Remote Setup
 
 ### DigitalOcean
@@ -131,12 +158,16 @@ The current local version is PHP 7.0.
 
 
 
+[Bedrock]: https://roots.io/bedrock/
 [ScotchBox]: https://box.scotch.io/
 [cloud-init]: https://cloud-init.io/
 [DigitalOcean]: https://www.digitalocean.com
 [Capistrano]: http://capistranorb.com/
 [Git]: https://git-scm.com/
 [GitHub]: https://github.com/
+[Composer]: https://getcomposer.org/
+[PHP 7]: http://php.net/manual/en/migration70.new-features.php
+[WordPress]: https://wordpress.org/
 
 [local\deploy-authorized-keys]: do-provision.yml#L9
 [local\capistrano-ssh-key-path]: config/deploy/production.rb#L19
