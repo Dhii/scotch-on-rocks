@@ -26,11 +26,15 @@ The technologies and tools used here include:
 - [MariaDB][] for fast and modern data storage and retrieval.
 
 ## Requirements
-Your host environment - the one you will be developing on and deploying from -is required to have these tools installed:
+Your host environment - the one you will be developing on - is required to have these tools installed:
 
 - [Git][].
 - [Vagrant][].
 - An [SSH][] client.
+- [Capistrano][].
+
+Capistrano will be automatically installed inside the dev VM, so it's possible to deploy from it, provided that
+you have access to the SSH key that is used for deployment inside the VM.
 
 For Windows hosts, it is recommended to use [Git BASH][] , as it allows running Vagrant, comes with an SSH client, and
 is installed together with Git.
