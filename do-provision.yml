@@ -92,3 +92,10 @@ runcmd:
   - curl -O "https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar"
   - sudo mv wp-cli.phar /usr/local/bin/wp
   - sudo chmod +x /usr/local/bin/wp
+  # Installing `dotenv` plugin for WP CLI
+  # https://stackoverflow.com/questions/20667761/composer-killed-while-updating/47975942#47975942
+  - sudo service mysql stop
+  - sudo service php7.0-fpm stop
+  - wp package install aaemnnosttv/wp-cli-dotenv-command:^1.0.2
+  - sudo service mysql stop
+  - sudo service php7.0-fpm stop
