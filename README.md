@@ -108,11 +108,17 @@ Commit the changes in the [`composer.lock`][local\composer.lock] file to record 
     However, it is not advisable to commit changes to this file for security reasons.
     - Watch out when using [special shell characters][shell\special-chars]: these values will be parts of
     shell commands, and therefore must be [escaped][shell\escaping-chars].
+    - The cloud-init service will try to [install][wp-cli\dotenv-installation] the [`dotenv`][wp-cli\dotenv] plugin
+    for [WP CLI][]'s native package management means, which use Composer. This can require a large amount of memory,
+    and may fail due to runnimg OOM.
 7. Run `bundle install` as per [bedrock-capistrano requirements][roots\bedrock-capistrano-requirements].
 8. Create an env config on the target server at `/srv/www/html/shared/.env`.
-    - You can use the existing [`.env`][local\.env] file as template. However, it is not advisable to commit
-    changes to this file for security reasons.
-    - You will need to SSH into the target server for this. It should be possible to use the `deploy` user
+    - You can try [using][roots\thread-wp-dotenv-init] the [WP CLI][] tool to initialize the configuration,
+    if the [`dotenv`][wp-cli\dotenv] plugin installed successfully.
+    - Alternatively, you can create the file manually, perhaps using the existing
+    [`.env`][local\.env] file as template.
+    - It is not advisable to commit changes to the `.env` file for security reasons.
+    - You may need to SSH into the target server for this. It should be possible to use the `deploy` user
     that is created as part of provisioning, with one of the keys from step 4.2.
 
 ### 5. Deploy
@@ -182,6 +188,7 @@ your application, which by default would be at `/srv/www/html/shared`.
 [Composer]: https://getcomposer.org/
 [PHP 7]: http://php.net/manual/en/migration70.new-features.php
 [WordPress]: https://wordpress.org/
+[WP CLI]: http://wp-cli.org/
 [MariaDB]: https://mariadb.org/about/
 [Vagrant]: https://www.vagrantup.com/
 [SSH]: https://en.wikipedia.org/wiki/Secure_Shell
@@ -205,9 +212,12 @@ your application, which by default would be at `/srv/www/html/shared`.
 [digitalocean\set-up-ssh-keys]: https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
 [roots\bedrock-capistrano]: https://github.com/roots/bedrock-capistrano
 [roots\bedrock-capistrano-requirements]: https://github.com/roots/bedrock-capistrano#requirements
+[roots\thread-wp-dotenv-init]: https://discourse.roots.io/t/missing-step-installing-bedrock/5542/6
 [shell\special-chars]: http://tldp.org/LDP/abs/html/special-chars.html
 [shell\escaping-chars]: http://tldp.org/LDP/abs/html/escapingsection.html#ESCP
 [composer\config-minimum-stability]: https://getcomposer.org/doc/04-schema.md#minimum-stability
 [composer\command-update]: https://getcomposer.org/doc/03-cli.md#update
 [vagrant\command-up]: https://www.vagrantup.com/docs/cli/up.html
 [vagrant\command-ssh]: https://www.vagrantup.com/docs/cli/ssh.html
+[wp-cli\dotenv]: https://github.com/aaemnnosttv/wp-cli-dotenv-command
+[wp-cli\dotenv-installation]: https://github.com/aaemnnosttv/wp-cli-dotenv-command#installation
